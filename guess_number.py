@@ -14,4 +14,8 @@ while guess != 'q':
         if num_guesses == 0:
             break
         else:
-            guess = input(f"Guess again or q to quit (Amount of guesses left {num_guesses}): ")
+            if guess > number:
+                guess = input(f"You guessed too high! Guess again or q to quit (Amount of guesses left {num_guesses}): ")
+            else:
+                guess = input(f"You guessed too low! Guess again or q to quit (Amount of guesses left {num_guesses}): ")
+        
