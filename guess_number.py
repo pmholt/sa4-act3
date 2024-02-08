@@ -1,7 +1,8 @@
 number = 10
+num_guesses = 3
 
 print("I'm thinking of a number...")
-guess = int(input("What number am I thinking of? "))
+guess = int(input(f"What number am I thinking of? (Amount of guesses left {num_guesses}) "))
 
 while guess != 'q':
     guess = int(guess)
@@ -9,4 +10,8 @@ while guess != 'q':
         print("Congratulations! You guessed the right number.")
         guess = 'q'
     else:
-        guess = input("Guess again or q to quit: ")
+        num_guesses -= 1
+        if num_guesses == 0:
+            break
+        else:
+            guess = input(f"Guess again or q to quit (Amount of guesses left {num_guesses}): ")
